@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virio · pages de test</title>
+  <style>
+    body { margin: 0; padding: 32px 16px; background: #07090d; color: #f2f4f8; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 46rem; margin: 0 auto; }
+    h1 { font-size: 2rem; letter-spacing: -0.03em; margin: 0 0 8px; }
+    p { color: #b9c0cc; }
+    ol { padding-left: 1.2rem; display: grid; gap: 14px; }
+    a { color: #f2f4f8; font-family: ui-monospace, Consolas, monospace; }
+    .exp { display: block; color: #8c96a8; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Pages de test Virio</h1>
+    <p>Ces pages imitent de faux sites pour tester l'extension sur votre ordinateur. Elles ne vont nulle part et n'envoient rien. Les adresses en <code>.localhost</code> pointent toutes vers votre propre machine.</p>
+    <ol>
+      <li><a href="http://antai-paiement-gouv.localhost:8765/faux-amende.html">antai-paiement-gouv.localhost</a>
+        <span class="exp">L'adresse du film : bloquée avant même que la page s'affiche.</span></li>
+      <li><a href="http://impots.gouv.fr.remboursement.localhost:8765/faux-amende.html">impots.gouv.fr.remboursement.localhost</a>
+        <span class="exp">Une vraie adresse cachée au début d'une fausse : bloquée tout de suite.</span></li>
+      <li><a href="http://paiement-dossier.localhost:8765/faux-amende.html">paiement-dossier.localhost</a>
+        <span class="exp">Adresse presque neutre : c'est le contenu (se présente comme l'ANTAI et demande la carte) qui déclenche le blocage, une fraction de seconde après l'ouverture.</span></li>
+      <li><a href="http://suivi-envoi.localhost:8765/faux-colis.html">suivi-envoi.localhost</a>
+        <span class="exp">Faux Colissimo en deux temps : la page s'ouvre, puis Virio bloque dès qu'on clique sur « Payer » et que le formulaire de carte apparaît.</span></li>
+      <li><a href="http://bon-plan-express.localhost:8765/boutique-douteuse.html">bon-plan-express.localhost</a>
+        <span class="exp">Boutique douteuse sans marque imitée : pas de blocage, mais le bandeau « Site suspect » s'affiche, et revient quand on clique dans le champ de carte.</span></li>
+      <li><a href="http://ma-boutique.localhost:8765/boutique.html">ma-boutique.localhost</a>
+        <span class="exp">Boutique normale avec un paiement par carte : aucune alerte.</span></li>
+    </ol>
+    <p>Essayez aussi de taper directement dans la barre d'adresse : <code>chronopst-livraison.top</code>, <code>ameli-remboursement.com</code> ou <code>la-poste-suivi-colis.com</code>. Virio les arrête avant le chargement, même si le site n'existe pas.</p>
+  </main>
+</body>
+</html>

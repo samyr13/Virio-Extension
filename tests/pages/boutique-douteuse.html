@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- Page de test Virio : boutique douteuse, sans marque imitée. Attendu : bandeau « Site suspect »,
+     pas de blocage. Rien n'est envoyé. -->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bon Plan Express - Commande</title>
+  <style>
+    body { margin: 0; font: 15px/1.5 Arial, sans-serif; color: #161b26; background: #fff; }
+    main { max-width: 480px; margin: 90px auto 24px; padding: 0 16px; }
+    .hurry { color: #c8363b; font-weight: 700; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccd; border-radius: 4px; font: inherit; box-sizing: border-box; }
+    button { margin-top: 16px; width: 100%; padding: 12px; background: #161b26; color: #fff; border: 0; border-radius: 4px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>iPhone à 1 € : dernière chance</h1>
+    <p class="hurry">Offre urgente : temps restant 04:59. Votre réservation sera annulée sans paiement.</p>
+    <form action="#" onsubmit="return false">
+      <label for="cc">Numéro de carte</label><input id="cc" autocomplete="cc-number">
+      <label for="cvv">Cryptogramme</label><input id="cvv" name="cvv">
+      <label for="otp">Code reçu par SMS</label><input id="otp" autocomplete="one-time-code">
+      <button type="submit">Valider ma commande</button>
+    </form>
+  </main>
+</body>
+</html>

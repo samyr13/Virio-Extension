@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- Page de test Virio : faux suivi de colis en deux temps. Le formulaire de carte n'apparaît
+     qu'après le clic, comme dans les vrais kits d'arnaque. Rien n'est envoyé. -->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colissimo - Suivi de votre colis</title>
+  <style>
+    body { margin: 0; font: 15px/1.5 Arial, sans-serif; color: #161b26; background: #f4f5f8; }
+    header { background: #fff; padding: 14px 20px; border-bottom: 1px solid #e3e7ee; font-weight: 700; }
+    main { max-width: 480px; margin: 24px auto; padding: 20px; background: #fff; border-radius: 8px; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccd; border-radius: 4px; font: inherit; box-sizing: border-box; }
+    button { margin-top: 16px; width: 100%; padding: 12px; background: #ffcc00; color: #161b26; border: 0; border-radius: 4px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>Colissimo</header>
+  <main>
+    <h1>Votre colis est en attente</h1>
+    <p>Votre colis n° 6A2849551023 n'a pas pu être livré. Des frais de réexpédition de <b>1,99 €</b> sont à régler pour reprogrammer la livraison.</p>
+    <button id="pay" type="button">Payer 1,99 € et reprogrammer</button>
+    <div id="step2"></div>
+  </main>
+  <script>
+    document.getElementById("pay").addEventListener("click", () => {
+      document.getElementById("pay").remove();
+      document.getElementById("step2").innerHTML = `
+        <form action="#" onsubmit="return false">
+          <label for="cc">Numéro de carte</label><input id="cc" autocomplete="cc-number">
+          <label for="exp">Expiration</label><input id="exp" placeholder="MM/AA">
+          <label for="cvv">CVV</label><input id="cvv" name="cvv">
+          <button type="submit">Confirmer le paiement</button>
+        </form>`;
+    });
+  </script>
+</body>
+</html>

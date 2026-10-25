@@ -1,0 +1,75 @@
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(60rem 40rem at 50% -10%, rgba(58, 20, 24, 0.55), transparent 70%),
+    radial-gradient(50rem 36rem at 50% 30%, #121826, transparent 70%),
+    var(--ink);
+}
+
+/* The film's full-frame green flash, very brief, when Virio steps in. */
+.flash { position: fixed; inset: 0; background: var(--safe); pointer-events: none; opacity: 0; }
+.flash.on { animation: flash 0.16s ease-out 1; }
+@keyframes flash { 0% { opacity: 0.9; } 100% { opacity: 0; } }
+
+.sheet {
+  max-width: 44rem; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3.5rem) 16px 3rem;
+  display: grid; gap: 1.5rem;
+  animation: rise 0.5s var(--ease-out) both;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+
+.top { display: flex; align-items: center; gap: 10px; color: var(--text-2); font-size: 0.875rem; font-weight: 500; }
+.mark { width: 22px; height: 27px; }
+.name { color: var(--text); font: 800 1.125rem/1 var(--display); letter-spacing: -0.03em; }
+.on::before { content: ""; display: inline-block; width: 7px; height: 7px; margin: 0 8px 1px 2px; border-radius: 50%; background: var(--safe); }
+
+h1 {
+  margin: 0; font: 900 clamp(2.5rem, 7vw, 4.25rem)/0.94 var(--display); letter-spacing: -0.04em; text-wrap: balance;
+}
+h1 .stop { display: block; color: var(--threat); margin-bottom: 0.12em; }
+.lead { margin: -0.5rem 0 0; max-width: 34ch; color: var(--text-2); font-size: clamp(1.0625rem, 1.35vw, 1.25rem); }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.side { display: grid; gap: 6px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); min-width: 0; }
+.side .k { color: var(--muted); font-size: 0.8125rem; font-weight: 500; }
+.addr { font-size: 0.95rem; overflow-wrap: anywhere; }
+.fake .addr { color: var(--threat-text); text-decoration: line-through; text-decoration-color: var(--threat); text-decoration-thickness: 2px; }
+.real .addr { color: var(--safe); }
+.compare:not(:has(.real:not([hidden]))) { grid-template-columns: 1fr; }
+
+.risk-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; color: var(--text-2); font-size: 0.875rem; }
+.risk-head strong { color: var(--text); font-weight: 700; }
+.bar { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--threat); transition: width 0.9s var(--ease-out) 0.2s; }
+
+h2 { margin: 0 0 0.75rem; font: 800 1.25rem/1.1 var(--display); letter-spacing: -0.03em; }
+.reasons { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.reasons li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; line-height: 1.45; }
+.reasons li::before {
+  content: "✕"; display: grid; place-items: center; width: 22px; height: 22px; margin-top: 1px;
+  border-radius: 50%; background: var(--threat-strong); color: #fff; font-size: 11px; font-weight: 800;
+}
+.reasons li.minor { color: var(--text-2); font-size: 0.9375rem; }
+.reasons li.minor::before { background: var(--surface-2); color: var(--threat-text); }
+#more { margin-top: 4px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.actions .btn { flex: 1 1 14rem; }
+
+.all-checks { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: 0 16px; }
+.all-checks summary { cursor: pointer; padding: 14px 0; font-weight: 600; }
+.all-checks[open] summary { border-bottom: 1px solid var(--line); }
+.all-checks .checks { padding: 4px 0 8px; }
+
+.tips ul { margin: 0; padding: 0 0 0 1.1rem; display: grid; gap: 8px; color: var(--text-2); }
+.tips b { color: var(--text); }
+
+.risky { border-top: 1px solid var(--line); padding-top: 1rem; }
+.risky .link { font-size: 0.875rem; color: var(--muted); }
+.confirm { margin-top: 10px; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.confirm p { margin: 0 0 12px; color: var(--text-2); }
+.confirm .btn { height: 2.75rem; font-size: 0.9375rem; }
+
+@media (max-width: 560px) {
+  .compare { grid-template-columns: 1fr; }
+}

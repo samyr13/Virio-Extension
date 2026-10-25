@@ -1,0 +1,14 @@
+{
+  "name": "virio-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Extension Chrome Virio : détecte, bloque et redirige les faux sites.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/*.test.js\"",
+    "check": "node scripts/check-url.js",
+    "update-psl": "node scripts/update-psl.js",
+    "package": "node scripts/package.js",
+    "test-pages": "python -m http.server 8765 -d tests/pages"
+  }
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Page de test Virio : imitation volontairement simple d'un faux site d'amende. Le formulaire
+     ne s'envoie nulle part. -->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ANTAI - Paiement de votre avis de contravention</title>
+  <style>
+    body { margin: 0; font: 15px/1.5 Arial, sans-serif; color: #161b26; background: #fff; }
+    header { border-bottom: 4px solid #1d2f6f; padding: 14px 20px; display: flex; gap: 14px; align-items: center; }
+    .rf { font-weight: 700; font-size: 12px; line-height: 1.1; text-transform: uppercase; }
+    main { max-width: 520px; margin: 24px auto; padding: 0 16px; }
+    .timer { background: #fdecec; color: #c8363b; padding: 10px 12px; border-radius: 6px; font-weight: 700; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccd; border-radius: 4px; font: inherit; box-sizing: border-box; }
+    button { margin-top: 16px; width: 100%; padding: 12px; background: #1d2f6f; color: #fff; border: 0; border-radius: 4px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="rf">République<br>Française</div>
+    <strong>ANTAI · Agence nationale de traitement automatisé des infractions</strong>
+  </header>
+  <main>
+    <h1>Paiement de votre amende</h1>
+    <p>Avis de contravention n° 2026-48213. Montant à régler : <b>35,00 €</b>.</p>
+    <p class="timer">Dernier délai : réglez sous 24h pour éviter la majoration à 375 €.</p>
+    <form action="#" onsubmit="return false">
+      <label for="cc">Numéro de carte</label>
+      <input id="cc" name="cardnumber" autocomplete="cc-number" placeholder="1234 5678 9012 3456">
+      <label for="exp">Date d'expiration</label>
+      <input id="exp" name="exp" autocomplete="cc-exp" placeholder="MM/AA">
+      <label for="cvv">Cryptogramme</label>
+      <input id="cvv" name="cvv" autocomplete="cc-csc" placeholder="123">
+      <button type="submit">Payer 35,00 €</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virio · Site bloqué</title>
+  <link rel="icon" href="../../assets/icons/icon-32.png">
+  <link rel="stylesheet" href="virio.css">
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <div class="flash" aria-hidden="true"></div>
+  <main class="sheet">
+    <header class="top">
+      <svg class="mark" viewBox="4 2 192 234" aria-hidden="true"><path d="M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z" fill="#2bc97a" fill-opacity="0.14" stroke="#2bc97a" stroke-width="16" stroke-linejoin="round"/><rect x="82" y="66" width="36" height="104" rx="18" fill="#2bc97a"/></svg>
+      <span class="name">Virio</span>
+      <span class="on">Protection active</span>
+    </header>
+
+    <p class="pill threat" id="pill">Arnaque détectée</p>
+    <h1><span class="stop">STOP.</span> <span id="headline">Ce site est un faux.</span></h1>
+    <p class="lead" id="lead">Virio a bloqué la page avant que vous ne donniez vos informations.</p>
+
+    <section class="compare" aria-label="Adresses comparées">
+      <div class="side fake">
+        <span class="k">Vous alliez sur</span>
+        <span class="addr mono" id="fake-addr"></span>
+      </div>
+      <div class="side real" id="real" hidden>
+        <span class="k">Le vrai site</span>
+        <span class="addr mono" id="real-addr"></span>
+      </div>
+    </section>
+
+    <section class="risk" aria-label="Niveau de risque">
+      <div class="risk-head"><span>Niveau de risque</span><strong id="risk-label">Très élevé</strong></div>
+      <div class="bar" id="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-label="Niveau de risque"><i id="bar"></i></div>
+    </section>
+
+    <section class="why">
+      <h2>Ce qui cloche</h2>
+      <ul class="reasons" id="reasons"></ul>
+      <button class="link" id="more" type="button" hidden></button>
+    </section>
+
+    <div class="actions">
+      <a class="btn go" id="go" href="#" hidden>Aller sur le site officiel</a>
+      <button class="btn ghost" id="leave" type="button">Quitter cette page</button>
+    </div>
+
+    <details class="all-checks">
+      <summary>Tous les contrôles de Virio</summary>
+      <ul class="checks" id="checks"></ul>
+    </details>
+
+    <section class="tips">
+      <h2>Et maintenant ?</h2>
+      <ul>
+        <li>Ce lien vous est arrivé par SMS ? Transférez le message gratuitement au <b class="mono">33700</b> pour le signaler, puis supprimez-le.</li>
+        <li>Vous avez déjà saisi votre carte ? Appelez votre banque tout de suite pour faire opposition.</li>
+        <li>Pour une démarche, tapez vous-même l'adresse du service plutôt que de cliquer sur un lien.</li>
+      </ul>
+    </section>
+
+    <footer class="risky">
+      <button class="link" id="continue" type="button">Ouvrir ce site malgré l'alerte</button>
+      <div class="confirm" id="confirm" hidden>
+        <p>Ce site peut voler votre argent ou vos identifiants. Ne continuez que si vous êtes certain qu'il est sûr.</p>
+        <button class="btn ghost" id="continue-yes" type="button">J'ai compris, ouvrir le site</button>
+      </div>
+    </footer>
+  </main>
+  <script type="module" src="blocked.js"></script>
+</body>
+</html>

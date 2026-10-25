@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Page de test Virio : boutique ordinaire avec paiement par carte. Attendu : aucune alerte. -->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ma Boutique - Paiement</title>
+  <style>
+    body { margin: 0; font: 15px/1.5 Arial, sans-serif; color: #161b26; background: #fff; }
+    main { max-width: 480px; margin: 24px auto; padding: 0 16px; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccd; border-radius: 4px; font: inherit; box-sizing: border-box; }
+    button { margin-top: 16px; width: 100%; padding: 12px; background: #161b26; color: #fff; border: 0; border-radius: 4px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Finaliser ma commande</h1>
+    <p>Livraison Colissimo offerte dès 50 € d'achat.</p>
+    <img alt="Colissimo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="1" height="1">
+    <form action="#" onsubmit="return false">
+      <label for="cc">Numéro de carte</label><input id="cc" autocomplete="cc-number">
+      <label for="cvv">Cryptogramme</label><input id="cvv" autocomplete="cc-csc">
+      <button type="submit">Payer 64,90 €</button>
+    </form>
+  </main>
+</body>
+</html>
